@@ -1,0 +1,12 @@
+"Squirtle", "Tackle", "Tackles the opponent", 45, "Tail Whip", "Whippes the opponent", 50, "Water Gun", "Throws water on the opponent", 35, "Bubble", "Throws bubbles on the opponent", 40
+
+"Chikorita", "Tackle", "Tackles the opponent", 35, "Growl", "Growls at the opponent", 40, "Razor Leaf", "Throws Razor Leaves in the opponent", 55, "Poison Powder", "Poisons the opponent", 40
+
+"Pikachu", "Tail Whip", "Whippes the opponent", 50, "Thunder Shock", "Shocks the opponent", 70, "Growl", "Growls at the opponent", 50, "Play Nice", "Just chills", 0
+
+"Abra", "Psychock", "Psychic shock at the opponent", 80, "Calm Mind", "Is Calm", 0, "Toxic", "Intoxicates the opponent", 45, "Hidden Power", "Does something hidden", 45
+
+"Ekans", "Wrap", "Wraps itself", 20, "Leer", "Does something", 40, "Poison Sting", "Poisons the opponent", 55, "Bite", "Bittes the opponent", 55
+"Vulpix", "Ember", "Embbers the opponent", 40, "Tail Whip", "Whippes the opponent", 50, "Baby-Doll eyes", "Cutely seduced the opponent", 30, "Quick Attack", "Quickly attacks the opponet", 50
+
+"Charmander", "Scratch", "Scratches the opponent", 40, "Growl", "Growls at the opponent", 50, "Ember", "Embbers the opponent", 40, "Smokescreen", "Throws smoke on the screen", 40

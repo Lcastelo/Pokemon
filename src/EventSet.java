@@ -31,31 +31,27 @@ class EventSet{
 	private Event[] events = new Event[100];
 	int s = 0;
 	int t = 0;
-	boolean vazio = true;
+	int qte = 0;
 	
 	public void add(Event e){
-		if(this.quant() < 100){
+		if(this.qte < 100){
 			events[t] = e;
 			t = (t + 1)%100;//t pode ser 100
+			qte++;
 		}
 		else throw new RuntimeException("Array lotado");
 	}
 	public Event getNext(){
-		if(!vazio){
+		if(qte!=0){
 			return events[s];
 		}
 		else return null;
 	}
 	public void removeCurrent(){
-		if(!vazio){
+		if(qte!=0){
 			events[s] = null;
 			s = (s + 1) % 100;
-			if(this.quant() == 0) vazio = true;	
+			qte--;
 		}
-	}
-	public int quant(){
-		if(vazio) return 0;
-		if(t <= s && !vazio) return 100 + t - s;
-		else return t - s;
 	}
 }

@@ -1,10 +1,11 @@
+/Apresentacao.class
+/Ataque.class
+/Batalha.class
 /Controller.class
 /Event.class
 /EventSet.class
-/Batalha.class
 /Pokemon.class
-/Ataque.class
-/Treinador.class
-/Pokepedia.class
-/Apresentacao.class
 /TAtaque.class
+/Treinador.class
+/Item.class
+/Acao.class

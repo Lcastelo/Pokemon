@@ -11,7 +11,7 @@ public class Treinador {
 		this.nome = nome;
 		pokemons = new ArrayList<Pokemon>();
 		for (int i = 0; i < totalPokemons; i++){
-			//é possivel ter o mesmo pokemon mais de uma vez
+			//ï¿½ possivel ter o mesmo pokemon mais de uma vez
 			int n = (int) Math.floor(pokepedia.size()*Math.random());
 			pokemons.add(pokepedia.get(n).clone());
 		}
@@ -31,7 +31,7 @@ public class Treinador {
 	}
 	
 	public boolean atualVivo(){
-		return pokemons.get(pokemonAtual).vida > 0;
+		return (pokemons.get(pokemonAtual).vida > 0);
 	}
 	
 	public String nomeAtual(){
@@ -42,7 +42,10 @@ public class Treinador {
 		return pokemons.get(pokemonAtual).ataques.get(n);
 	}
 	
-	public void atualPerdeVida(int x){
-		pokemons.get(pokemonAtual).perdeXVida(x);
+	public void atualMudaVida(int x){
+		pokemons.get(pokemonAtual).mudaXVida(x);
+	}
+	public int vidaAtual(){
+		return pokemons.get(pokemonAtual).vida;
 	}
 }

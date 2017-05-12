@@ -4,6 +4,7 @@ public class Pokemon {
 	public String nome;
 	public int vida;
 	public ArrayList<Ataque> ataques;
+	public static Item it = new Item();
 	
 	public Pokemon(){
 		ataques = new ArrayList<Ataque>();
@@ -20,7 +21,7 @@ public class Pokemon {
 		
 		this.nome = nome;
 		
-		this.vida = 150;
+		this.vida = 300;
 	}
 	
 	public Pokemon clone(){
@@ -34,7 +35,9 @@ public class Pokemon {
 		return c;
 	}
 	
-	public void perdeXVida(int x){
-		this.vida -= x;
+	public void mudaXVida(int x){
+		this.vida += x;
+		if(this.vida < 0) this.vida = 0;
+		if(this.vida > 300) this.vida = 300;
 	}
 }

@@ -6,6 +6,7 @@ public class Treinador {
 	boolean venceu;
 	int pokemonAtual = 0;
 	int totalPokemons = 6;
+	int totalAtaques = 4;
 	boolean fantasma;
 	
 	public Treinador(ArrayList<Pokemon> pokepedia, String nome){

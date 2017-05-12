@@ -57,6 +57,7 @@ public class Batalha extends Controller{
 		 * 	b.run();
 		 */
 		
+		//LOOP INFINITO EM "UM TREINADOR ATACA"
 		while(!T1.venceu() && !T2.venceu()){
 			while(T1.atualVivo() && T2.atualVivo()){
 				b.addEvent(new TAtaque(T1, T2));

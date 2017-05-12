@@ -11,7 +11,7 @@ public class TAtaque extends Event{
 		//tira vida do pokemon afetado
 		int n = (int)Math.floor(t1.totalPokemons*Math.random());
 		
-		System.out.println(t1.nomeAtual() + " " + t1.ataqueN(n).description());
+		System.out.println(t1.nome + ": " + t1.nomeAtual() + " " + t1.ataqueN(n).description());
 		t2.atualPerdeVida(t1.ataqueN(n).damage);
 		
 	}

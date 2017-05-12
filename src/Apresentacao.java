@@ -6,7 +6,7 @@ public class Apresentacao extends Event{
 		
 	}
 	public void action(){
-		System.out.println("Ol· eu sou " + t.nome);
+		System.out.println("Ol√° eu sou " + t.nome);
 	}
 	public String description(){
 		return "Treinador se apresenta";

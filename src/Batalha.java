@@ -23,7 +23,7 @@ public class Batalha extends Controller{
 				String[] att3 = inputStream.nextLine().split(",");
 				String[] att4 = inputStream.nextLine().split(",");
 				
-				pokepedia.add(new Pokemon(name, att1, att2, att3, att4));//classe pokemon que é responsavel por processar isso
+				pokepedia.add(new Pokemon(name, att1, att2, att3, att4));//classe pokemon que ï¿½ responsavel por processar isso
 			}
 			inputStream.close();
 		} catch (FileNotFoundException e) {
@@ -36,7 +36,7 @@ public class Batalha extends Controller{
 		Treinador T1 = new Treinador("Jonas", pokepedia);
 		Treinador T2 = new Treinador("Marcos", pokepedia);
 		
-		//ADICIONA AS APRESENTAÇÕES
+		//ADICIONA AS APRESENTAï¿½ï¿½ES
 		b.addEvent(new Apresentacao(T1));
 		b.addEvent(new Apresentacao(T2));
 		
@@ -46,12 +46,12 @@ public class Batalha extends Controller{
 		 * 		se o atual do primeiro morreu
 		 * 			se ele tem mais pokemons
 		 * 				troca o atual
-		 * 			se não
+		 * 			se nï¿½o
 		 * 				t2 venceu = true e add o evento de vitoria
 		 * 		se o atual do segundo morreu
 		 * 			se ele tem mais pokemons
 		 * 				troca o atual
-		 * 			se não
+		 * 			se nï¿½o
 		 * 				t1 venceu = true e add o evento de vitoria
 		 * 	evento fim da batalha
 		 * 	b.run();
@@ -60,8 +60,8 @@ public class Batalha extends Controller{
 		//LOOP INFINITO EM "UM TREINADOR ATACA"
 		while(!T1.venceu() && !T2.venceu()){
 			while(T1.atualVivo() && T2.atualVivo()){
-				b.addEvent(new TAtaque(T1, T2));
-				b.addEvent(new TAtaque(T2, T1));
+				b.addEvent(new Acao(T1, T2));
+				b.addEvent(new Acao(T2, T1));
 				b.run();
 			}
 			if(!T1.atualVivo()){//se ele tem outros pokemons isso retorna true
@@ -83,6 +83,8 @@ public class Batalha extends Controller{
 				}
 			}
 		}
-		System.out.println("É o fim da batalha: " + (T1.venceu()?T1.nome:T2.nome) + " é o vencedor");
+		System.out.println("Ã‰ o fim da batalha: " + (T1.venceu()?T1.nome:T2.nome) + " Ã© o vencedor");
 	}
 }
+
+//quando for atacar ver o se o  pokemon ta vivo e sÃ³ se sim efetuar o ataque

@@ -1,8 +1,5 @@
 abstract public class Event {
-	private long evtTime;
-	public Event(long eventTime) {
-		evtTime = eventTime;
-	}
+	private long evtTime = 200;
 	public boolean ready() {
 		return System.currentTimeMillis() >= evtTime;
 	}

@@ -5,6 +5,9 @@ import java.util.Scanner;
 
 public class Batalha extends Controller{
 	public static void main(String[] args) {
+		/*
+		 * 
+		 */
 		
 		//CRIANDO O ARRAY POKEPEDIA//
 		ArrayList<Pokemon> pokepedia = new ArrayList<Pokemon>();
@@ -28,11 +31,37 @@ public class Batalha extends Controller{
 			e.printStackTrace();
 		}
 		
-		
-		
+		//CRIA OS OBJETOS
 		Batalha b = new Batalha();
 		Treinador T1 = new Treinador(pokepedia);
 		Treinador T2 = new Treinador(pokepedia);
+		
+		//ADICIONA AS APRESENTAÇÕES
+		b.addEvent(new Apresentacao(T1));
+		b.addEvent(new Apresentacao(T2));
+		
+		/*	enquanto nenhum dos dois tiver vencido
+		 * 		enquanto nenhum dos dois pokemons atuais tiver morrido
+		 * 			t1 ataca, t2 ataca, b.run()
+		 * 		se o atual do primeiro morreu
+		 * 			se ele tem mais pokemons
+		 * 				troca o atual
+		 * 			se não
+		 * 				t2 venceu = true e add o evento de vitoria
+		 * 		se o atual do segundo morreu
+		 * 			se ele tem mais pokemons
+		 * 				troca o atual
+		 * 			se não
+		 * 				t1 venceu = true e add o evento de vitoria
+		 * 	evento fim da batalha
+		 * 	b.run();
+		 */
+		
+		while(!T1.venceu() && !T2.venceu()){
+			while(T1.atualVivo() && T2.atualVivo()){
+				b.addEvent(new TAtaque());
+			}
+		}
 		
 		b.run();
 	}

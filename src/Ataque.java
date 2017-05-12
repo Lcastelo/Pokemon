@@ -3,8 +3,7 @@ public class Ataque extends Event{
 	String description;
 	String name;
 	int damage;
-	Ataque(long eventTime,String name, String description, int damage) {
-		super(eventTime);
+	Ataque(String name, String description, int damage) {
 		this.description = description;
 		this.damage = damage;
 		this.name = name;

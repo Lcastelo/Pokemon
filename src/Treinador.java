@@ -5,7 +5,7 @@ public class Treinador {
 	ArrayList<Pokemon> pokemons;//pokemon vai ser trocado pra arraylist
 	boolean venceu;
 	int pokemonAtual = 0;
-	int totalPokemons = 4;
+	int totalPokemons = 6;
 	boolean fantasma;
 	
 	public Treinador(ArrayList<Pokemon> pokepedia, String nome){

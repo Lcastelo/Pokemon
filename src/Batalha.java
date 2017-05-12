@@ -59,10 +59,29 @@ public class Batalha extends Controller{
 		
 		while(!T1.venceu() && !T2.venceu()){
 			while(T1.atualVivo() && T2.atualVivo()){
-				b.addEvent(new TAtaque());
+				b.addEvent(new TAtaque(T1, T2));
+				b.addEvent(new TAtaque(T2, T1));
+				b.run();
+			}
+			if(!T1.atualVivo()){//se ele tem outros pokemons isso retorna true
+				if(T1.trocaPokemonAtual()){
+					System.out.println(T1.nome + " escolheu " + T1.nomeAtual());
+				}
+				else{
+					T2.venceu = true;
+					System.out.println(T2.nome + " vence a batalha");
+				}
+			}
+			if(!T2.atualVivo()){//se ele tem outros pokemons isso retorna true
+				if(T2.trocaPokemonAtual()){
+					System.out.println(T2.nome + " escolheu " + T2.nomeAtual());
+				}
+				else{
+					T1.venceu = true;
+					System.out.println(T1.nome + " vence a batalha");
+				}
 			}
 		}
-		
-		b.run();
+		System.out.println("É o fim da batalha: " + (T1.venceu()?T1.nome:T2.nome) + " é o vencedor");
 	}
 }

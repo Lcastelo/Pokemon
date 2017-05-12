@@ -6,16 +6,28 @@ public class Treinador {
 	boolean venceu;
 	int pokemonAtual = 0;
 	int totalPokemons = 4;
+	boolean fantasma;
 	
-	public Treinador(String nome, ArrayList<Pokemon> pokepedia){
+	public Treinador(ArrayList<Pokemon> pokepedia, String nome){
 		this.nome = nome;
+		fantasma = false;
+
 		pokemons = new ArrayList<Pokemon>();
+		
 		for (int i = 0; i < totalPokemons; i++){
 			//� possivel ter o mesmo pokemon mais de uma vez
 			int n = (int) Math.floor(pokepedia.size()*Math.random());
 			pokemons.add(pokepedia.get(n).clone());
 		}
 		venceu = false;
+	}
+	public Treinador(ArrayList<Pokemon> pokepedia){
+		fantasma = true;
+		pokemons = new ArrayList<Pokemon>();
+		int n = (int) Math.floor(pokepedia.size()*Math.random());
+		pokemons.add(pokepedia.get(n).clone());
+		venceu = false;
+		this.nome =  pokemons.get(0).nome + " selvagem";
 	}
 	
 	public boolean venceu(){

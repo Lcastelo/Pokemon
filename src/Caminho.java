@@ -6,12 +6,11 @@ import java.util.Scanner;
 public class Caminho {
 	
 	public static boolean prob(){
-		return Math.random()<0.09;
+		return Math.random()<0.3;
 	}
 	
 	public static void main(String[] args) {
 		int i = 0;
-		Batalha b;
 		
 		//CRIANDO O ARRAY POKEPEDIA//
 				ArrayList<Pokemon> pokepedia = new ArrayList<Pokemon>();
@@ -38,15 +37,17 @@ public class Caminho {
 		Treinador Ta = new Treinador(pokepedia, "Jonas");
 		Treinador Tb = new Treinador(pokepedia, "Marcos");
 		
-		while((10-i++)!=0 && Ta.atualVivo() && Tb.atualVivo()){
-			System.out.println(Ta.nome + "andou para uma casa com graminha");
-			if(prob())
-				b = new Batalha(pokepedia,Ta);
-			System.out.println(Tb.nome + "andou para uma casa com graminha");
-			if(prob())
-				b = new Batalha(pokepedia,Tb);
+		while((10-i++)!=0 && Ta.somaDasVidas()>0 && Tb.somaDasVidas()>0){
+			System.out.println(i + ": " +Ta.nome + " andou para uma casa com graminha");
+			if(prob()){
+				(new Batalha(pokepedia,Ta)).battle();
+			}
+
+			System.out.println(i + ": " +Tb.nome + " andou para uma casa com graminha");
+			if(prob()){
+				(new Batalha(pokepedia,Tb)).battle();
+			}
 		}
-		
-		b = new Batalha(pokepedia, Ta, Tb);
+		(new Batalha(pokepedia, Ta, Tb)).battle();
 	}
 }

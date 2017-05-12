@@ -14,7 +14,7 @@ public class Acao extends Event{
 		double r = Math.random();
 		if(r < 0.05){//ganha vida do item
 			t1.atualMudaVida(30);
-			System.out.println(t1.nome + ": " + t1.nomeAtual() + " usou um item e ganhou 30pt de vida" 
+			System.out.println("  >" + t1.nome + ": " + t1.nomeAtual() + " usou um item e ganhou 30pt de vida" 
 			+ "   :" + t1.nomeAtual() + t1.vidaAtual() + " " + t2.nomeAtual()+t2.vidaAtual());
 			System.out.println();
 		}
@@ -23,7 +23,7 @@ public class Acao extends Event{
 				int n = (int)Math.floor(t1.totalPokemons*Math.random());
 				t2.atualMudaVida(-t1.ataqueN(n).damage);
 				
-				System.out.println(t1.nome + ": " + t1.nomeAtual() + " " + t1.ataqueN(n).description()
+				System.out.println("  >" + t1.nome + ": " + t1.nomeAtual() + " " + t1.ataqueN(n).description()
 						+ "   :" + t1.nomeAtual() + t1.vidaAtual() + " " + t2.nomeAtual()+t2.vidaAtual());
 				System.out.println();
 			}

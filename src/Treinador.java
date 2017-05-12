@@ -48,4 +48,11 @@ public class Treinador {
 	public int vidaAtual(){
 		return pokemons.get(pokemonAtual).vida;
 	}
+	public int somaDasVidas(){
+		int soma = 0;
+		for (int k = 0; k < pokemons.size(); k++){
+			soma += pokemons.get(k).vida;
+		}
+		return soma;
+	}
 }

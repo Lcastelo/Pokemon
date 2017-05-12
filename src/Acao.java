@@ -12,7 +12,7 @@ public class Acao extends Event{
 		 * se não sorteia um ataque
 		 */
 		double r = Math.random();
-		if(r < 0.05){//cura o pokemon
+		if(r < 0.05){//ganha vida do item
 			t1.atualMudaVida(30);
 			System.out.println(t1.nome + ": " + t1.nomeAtual() + " usou um item e ganhou 30pt de vida" 
 			+ "   :" + t1.nomeAtual() + t1.vidaAtual() + " " + t2.nomeAtual()+t2.vidaAtual());

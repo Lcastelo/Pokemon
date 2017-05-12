@@ -42,6 +42,15 @@ public class Batalha extends Controller{
 		
 		while(!T1.venceu() && !T2.venceu()){
 			while(T1.atualVivo() && T2.atualVivo()){
+				if(Math.random() < 1/(1+T1.somaDasVidas())){//vida 100% ->0 vida em 0%-> 1
+				//quanto menos vida ele te no total mais chance tem de fugir da batalha
+					T2.venceu = true;
+					System.out.println(T1.nome + " fugiu da batalha...");
+				}
+				if(Math.random() < 1/(1+T2.somaDasVidas())){
+					T1.venceu = true;
+					System.out.println(T2.nome + " fugiu da batalha...");
+				}
 				b.addEvent(new Acao(T1, T2));
 				b.addEvent(new Acao(T2, T1));
 				b.run();
@@ -55,7 +64,7 @@ public class Batalha extends Controller{
 					System.out.println(T1.nome + " perdeu a batalha");
 				}
 			}
-			if(!T2.atualVivo()){//se ele tem outros pokemons isso retorna true
+			if(!T2.atualVivo()){
 				if(T2.trocaPokemonAtual()){
 					System.out.println(T2.nome + " escolheu " + T2.nomeAtual());
 				}

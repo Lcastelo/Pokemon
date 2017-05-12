@@ -1,5 +1,5 @@
 
-public class Ataque extends Event{
+public class Ataque{
 	String description;
 	String name;
 	int damage;
@@ -7,9 +7,6 @@ public class Ataque extends Event{
 		this.description = description;
 		this.damage = damage;
 		this.name = name;
-	}
-	public void action(){
-		//tira vida do outro pokemon
 	}
 	public String description(){
 		return this.description;

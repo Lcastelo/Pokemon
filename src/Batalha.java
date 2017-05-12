@@ -33,8 +33,8 @@ public class Batalha extends Controller{
 		
 		//CRIA OS OBJETOS
 		Batalha b = new Batalha();
-		Treinador T1 = new Treinador(pokepedia);
-		Treinador T2 = new Treinador(pokepedia);
+		Treinador T1 = new Treinador("Jonas", pokepedia);
+		Treinador T2 = new Treinador("Marcos", pokepedia);
 		
 		//ADICIONA AS APRESENTAÇÕES
 		b.addEvent(new Apresentacao(T1));

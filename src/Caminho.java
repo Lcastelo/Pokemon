@@ -25,6 +25,7 @@ public class Caminho {
 						String[] atTb = inputStream.nextLine().split(",");
 						String[] att3 = inputStream.nextLine().split(",");
 						String[] att4 = inputStream.nextLine().split(",");
+						String tipo = inputStream.nextLine();
 						
 						pokepedia.add(new Pokemon(name, atTa, atTb, att3, att4));//classe pokemon que � responsavel por processar isso
 					}

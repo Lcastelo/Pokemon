@@ -1,11 +1,3 @@
-/Apresentacao.class
-/Ataque.class
-/Batalha.class
-/Controller.class
-/Event.class
-/EventSet.class
-/Pokemon.class
-/TAtaque.class
-/Treinador.class
-/Item.class
 /Acao.class
+/Caminho.class
+/Item.class

@@ -43,6 +43,10 @@ public class Treinador {
 		return false;
 	}
 	
+	public String atualTipo(){
+		return pokemons.get(pokemonAtual).tipo;
+	}
+	
 	public boolean atualVivo(){
 		return (pokemons.get(pokemonAtual).vida > 0);
 	}

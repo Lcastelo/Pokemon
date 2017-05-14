@@ -32,7 +32,7 @@ public class Pokemon {
 		}
 		c.vida = this.vida;
 		c.nome = this.nome;
-		
+		c.tipo = this.tipo;
 		return c;
 	}
 	

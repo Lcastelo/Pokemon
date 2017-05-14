@@ -20,17 +20,17 @@ public class Acao extends Event{
 		}
 		else{
 			if(t1.atualVivo()){
-				if((t1.atualTipo()=="Agua" && t2.atualTipo()=="Fogo") ||(t1.atualTipo()=="Fogo" && t2.atualTipo()=="Grama") ||(t1.atualTipo()=="Grama" && t2.atualTipo()=="Agua") ||(t1.atualTipo()=="Agua" && t2.atualTipo()=="Terra") ||(t1.atualTipo()=="Terra" && t2.atualTipo()=="Eletrico") ||(t1.atualTipo()=="Eletrico" && t2.atualTipo()=="Agua") ||(t1.atualTipo()=="Psiquico" && t2.atualTipo()=="Lutador") ||(t1.atualTipo()=="Lutador" && t2.atualTipo()=="Dark") ||(t1.atualTipo()=="Dark" && t2.atualTipo()=="Psiquico")){
+				if (this.relacaoTipo() == 1){
 					int n = (int)Math.floor(t1.totalAtaques*Math.random());
-					t2.atualMudaVida(-t1.ataqueN(2*n).damage);
+					t2.atualMudaVida(-t1.ataqueN(n).damage*2);
 					
 					System.out.println("  >" + t1.nome + ": " + t1.nomeAtual() + " " + t1.ataqueN(n).description()
 							+ ". It's super effective." + "   :" + t1.nomeAtual() + t1.vidaAtual() + " " + t2.nomeAtual()+t2.vidaAtual());
 					System.out.println();
 				}
-				else if((t1.atualTipo()=="Fogo" && t2.atualTipo()=="Agua") ||(t1.atualTipo()=="Grama" && t2.atualTipo()=="Fogo") ||(t1.atualTipo()=="Agua" && t2.atualTipo()=="Grama") ||(t1.atualTipo()=="Terra" && t2.atualTipo()=="Agua") ||(t1.atualTipo()=="Eletrico" && t2.atualTipo()=="Terra") ||(t1.atualTipo()=="Agua" && t2.atualTipo()=="Eletrico") ||(t1.atualTipo()=="Lutador" && t2.atualTipo()=="Psiquico") ||(t1.atualTipo()=="Dark" && t2.atualTipo()=="Lutador") ||(t1.atualTipo()=="Psiquico" && t2.atualTipo()=="Dark")){
+				else if (this.relacaoTipo() == -1){
 					int n = (int)Math.floor(t1.totalAtaques*Math.random());
-					t2.atualMudaVida(-t1.ataqueN(n/2).damage);
+					t2.atualMudaVida(-t1.ataqueN(n).damage/2);
 					
 					System.out.println("  >" + t1.nome + ": " + t1.nomeAtual() + " " + t1.ataqueN(n).description()
 							+ ". It's not very effective." +"   :" + t1.nomeAtual() + t1.vidaAtual() + " " + t2.nomeAtual()+t2.vidaAtual());
@@ -38,12 +38,12 @@ public class Acao extends Event{
 				}
 				
 				else{
-				int n = (int)Math.floor(t1.totalAtaques*Math.random());
-				t2.atualMudaVida(-t1.ataqueN(n).damage);
-				
-				System.out.println("  >" + t1.nome + ": " + t1.nomeAtual() + " " + t1.ataqueN(n).description()
-						+ "   :" + t1.nomeAtual() + t1.vidaAtual() + " " + t2.nomeAtual()+t2.vidaAtual());
-				System.out.println();
+					int n = (int)Math.floor(t1.totalAtaques*Math.random());
+					t2.atualMudaVida(-t1.ataqueN(n).damage);
+					
+					System.out.println("  >" + t1.nome + ": " + t1.nomeAtual() + " " + t1.ataqueN(n).description()
+							+ "   :" + t1.nomeAtual() + t1.vidaAtual() + " " + t2.nomeAtual()+t2.vidaAtual());
+					System.out.println();
 				}
 			}
 		}
@@ -51,5 +51,31 @@ public class Acao extends Event{
 	}
 	public String description(){
 		return "Um treinador ataca";
+	}
+	
+	public int relacaoTipo(){//retorna 1 pra vantagem do t1, retorna -1 pra vantagem do t2, retorna 0 se nenhum dos dois tem vantagem
+		if((t2.atualTipo().equals("Fogo") && t1.atualTipo().equals("Agua")) ||
+				(t2.atualTipo().equals("Grama") && t1.atualTipo().equals("Fogo")) ||
+				(t2.atualTipo().equals("Agua") && t1.atualTipo().equals("Grama")) ||
+				(t2.atualTipo().equals("Terra") && t1.atualTipo().equals("Agua")) ||
+				(t2.atualTipo().equals("Eletrico") && t1.atualTipo().equals("Terra")) ||
+				(t2.atualTipo().equals("Agua") && t1.atualTipo().equals("Eletrico")) ||
+				(t2.atualTipo().equals("Lutador") && t1.atualTipo().equals("Psiquico")) ||
+				(t2.atualTipo().equals("Dark") && t1.atualTipo().equals("Lutador")) ||
+				(t2.atualTipo().equals("Psiquico") && t1.atualTipo().equals("Dark"))){
+			return 1;
+		}
+		else if ((t1.atualTipo().equals("Fogo") && t2.atualTipo().equals("Agua")) ||
+				(t1.atualTipo().equals("Grama") && t2.atualTipo().equals("Fogo")) ||
+				(t1.atualTipo().equals("Agua") && t2.atualTipo().equals("Grama")) ||
+				(t1.atualTipo().equals("Terra") && t2.atualTipo().equals("Agua")) ||
+				(t1.atualTipo().equals("Eletrico") && t2.atualTipo().equals("Terra")) ||
+				(t1.atualTipo().equals("Agua") && t2.atualTipo().equals("Eletrico")) ||
+				(t1.atualTipo().equals("Lutador") && t2.atualTipo().equals("Psiquico")) ||
+				(t1.atualTipo().equals("Dark") && t2.atualTipo().equals("Lutador")) ||
+				(t1.atualTipo().equals("Psiquico") && t2.atualTipo().equals("Dark"))){
+			return -1;
+		}
+		else return 0;
 	}
 }

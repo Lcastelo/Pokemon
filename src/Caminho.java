@@ -27,7 +27,7 @@ public class Caminho {
 						String[] att4 = inputStream.nextLine().split(",");
 						String tipo = inputStream.nextLine();
 						
-						pokepedia.add(new Pokemon(name, atTa, atTb, att3, att4));//classe pokemon que � responsavel por processar isso
+						pokepedia.add(new Pokemon(name, atTa, atTb, att3, att4, tipo));//classe pokemon que � responsavel por processar isso
 					}
 					inputStream.close();
 				} catch (FileNotFoundException e) {
